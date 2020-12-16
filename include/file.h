@@ -1,3 +1,4 @@
+#pragma once
 #include "socket.h"
 
 class File {
@@ -5,8 +6,9 @@ class File {
 public:
   File();
   ~File();
-  void Write();
-  void Read();
+  void Read(Message& message);
+  void Write(Message& message);
+  int GetResult();
 private:
-  int fd_;
+  int fd_, result_;
 };
